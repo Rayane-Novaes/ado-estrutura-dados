@@ -6,10 +6,10 @@ public class Main {
 		// TODO Auto-generated method stub
 		ArvoreAluno objAluno = new ArvoreAluno();
 
-		objAluno.inserir(new Aluno("Pamera", 10, 10, 10, 0));
-		objAluno.inserir(new Aluno("Rayane", 10, 10, 10, 2));
-		objAluno.inserir(new Aluno("Rafael", 10, 10, 10, 5));
-		objAluno.inserir(new Aluno("Vini", 10, 10, 10, 1));
+		objAluno.inserir(new Aluno("Pamera", 10, 10, 0));
+		objAluno.inserir(new Aluno("Rayane", 8, 9, 2));
+		objAluno.inserir(new Aluno("Rafael", 7, 6, 5));
+		objAluno.inserir(new Aluno("Vini", 10, 8, 1));
 
 		objAluno.preOrdem(objAluno.getRaiz());
 
