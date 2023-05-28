@@ -3,6 +3,7 @@ package tad_aluno_arvore_binaria;
 public class Main {
 
 	public static void main(String[] args) {
+
 		// TODO Auto-generated method stub
 		ArvoreAluno objAluno = new ArvoreAluno();
 
@@ -12,6 +13,12 @@ public class Main {
 		objAluno.inserir(new Aluno("Vini", 10, 8, 1));
 
 		objAluno.preOrdem(objAluno.getRaiz());
+
+		System.out.println("--------------------------------------------------------------");
+
+		System.out.println("A MENOR MÉDIA FOI: " + objAluno.menorMedia(objAluno.getRaiz()));
+
+		System.out.println("--------------------------------------------------------------");
 
 		int x = objAluno.contar();
 		System.out.println("existem " + x + "alunos na �rvore");

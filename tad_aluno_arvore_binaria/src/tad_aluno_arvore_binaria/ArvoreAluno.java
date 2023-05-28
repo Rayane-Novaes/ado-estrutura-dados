@@ -25,6 +25,7 @@ public class ArvoreAluno {
         }
     }
 
+
     public void inserir(Elemento atual, Elemento elemento) {
         if (elemento.getObjA().getId() >= atual.getObjA().getId()) {
             if (elemento.getDireita() == null) {
@@ -43,6 +44,28 @@ public class ArvoreAluno {
         }
     }
 
+
+    public double menorMedia(Elemento e){
+
+        double menorMedia = e.getObjA().getMedia();
+
+        if(e.getEsquerda() != null){
+
+            double mediaEsquerda = menorMedia(e.getEsquerda());
+
+            if (mediaEsquerda < menorMedia) {
+                menorMedia = mediaEsquerda;
+            }
+        }
+
+        if (e.getDireita() != null) {
+            double mediaDireita = menorMedia(e.getDireita());
+            if (mediaDireita < menorMedia) {
+                menorMedia = mediaDireita;
+            }
+        }
+        return menorMedia;
+    }
     public void preOrdem(Elemento p) {
         if (p != null) {
             System.out.println(p.getObjA());
@@ -53,7 +76,7 @@ public class ArvoreAluno {
 
     public int contar() {
         Elemento e=raiz;
-int         cont=0;
+        int cont=0;
         while(e!=null){
         	cont++;
             e=e.getEsquerda();
