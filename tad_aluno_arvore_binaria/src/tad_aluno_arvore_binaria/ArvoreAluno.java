@@ -66,6 +66,29 @@ public class ArvoreAluno {
         }
         return menorMedia;
     }
+
+        //Maior média
+
+        public double maiorMedia(Elemento e) {
+            double maiorMedia = e.getObjA().getMedia();
+    
+            if (e.getEsquerda() != null) {
+                double mediaEsquerda = maiorMedia(e.getEsquerda());
+                if (mediaEsquerda > maiorMedia) {
+                    maiorMedia = mediaEsquerda;
+                }
+            }
+    
+            if (e.getDireita() != null) {
+                double mediaDireita = maiorMedia(e.getDireita());
+                if (mediaDireita > maiorMedia) {
+                    maiorMedia = mediaDireita;
+                }
+            }
+    
+            return maiorMedia;
+        }
+        
     public void preOrdem(Elemento p) {
         if (p != null) {
             System.out.println(p.getObjA());
