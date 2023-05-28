@@ -16,16 +16,16 @@ public class Main {
 
 		System.out.println("--------------------------------------------------------------");
 
-		System.out.println("A MENOR MÉDIA FOI: " + objAluno.menorMedia(objAluno.getRaiz()));
+		System.out.println("A MENOR media FOI: " + objAluno.menorMedia(objAluno.getRaiz()));
 
 		System.out.println("--------------------------------------------------------------");
 		
-		System.out.println("A MAIOR MÉDIA FOI: " + objAluno.maiorMedia(objAluno.getRaiz()));
+		System.out.println("A MAIOR MEDIA FOI: " + objAluno.maiorMedia(objAluno.getRaiz()));
 
 		System.out.println("--------------------------------------------------------------");
 
 		int x = objAluno.contar();
-		System.out.println("existem " + x + "alunos na �rvore");
+		System.out.println("existem " + x + "alunos na arvore");
 	}
 
 }
