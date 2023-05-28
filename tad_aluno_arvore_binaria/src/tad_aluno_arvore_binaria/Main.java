@@ -4,17 +4,17 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-ArvoreAluno objAluno = new ArvoreAluno();
+		ArvoreAluno objAluno = new ArvoreAluno();
 
-objAluno.inserir(new Aluno("Pamera", 10, 10, 10, 0));
-objAluno.inserir(new Aluno("Rayane", 10, 10, 10, 0));
-objAluno.inserir(new Aluno("Rafael", 10, 10, 10, 0));
-objAluno.inserir(new Aluno("Vini", 10, 10, 10, 0));
+		objAluno.inserir(new Aluno("Pamera", 10, 10, 10, 0));
+		objAluno.inserir(new Aluno("Rayane", 10, 10, 10, 2));
+		objAluno.inserir(new Aluno("Rafael", 10, 10, 10, 5));
+		objAluno.inserir(new Aluno("Vini", 10, 10, 10, 1));
 
-objAluno.preOrdem(objAluno.getRaiz());
+		objAluno.preOrdem(objAluno.getRaiz());
 
-int x=objAluno.contar();
-System.out.println("existem " + x + "alunos na �rvore");
+		int x = objAluno.contar();
+		System.out.println("existem " + x + "alunos na �rvore");
 	}
 
 }
