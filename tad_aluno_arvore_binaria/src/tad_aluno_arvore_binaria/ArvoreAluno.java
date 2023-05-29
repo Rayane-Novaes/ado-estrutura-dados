@@ -20,14 +20,14 @@ public class ArvoreAluno {
         if (raiz == null) {
             raiz = new Elemento(objA);
         } else {
-            atual = new Elemento(objA);
-            inserir(atual, raiz);
+
+            inserir(new Elemento(objA), raiz);
         }
     }
 
 
     public void inserir(Elemento atual, Elemento elemento) {
-        if (elemento.getObjA().getId() >= atual.getObjA().getId()) {
+        if (atual.getObjA().getId() >= elemento.getObjA().getId()) {
             if (elemento.getDireita() == null) {
                 elemento.setDireita(atual);
                 atual.setRaiz(elemento);
@@ -43,7 +43,6 @@ public class ArvoreAluno {
             }
         }
     }
-
 
     public double menorMedia(Elemento e){
 
@@ -125,6 +124,42 @@ public class ArvoreAluno {
             relatorioAlunosRecursivo(elemento.getEsquerda());
             relatorioAlunosRecursivo(elemento.getDireita());
         }
+    }
+    public Elemento pesquisar(Elemento e, int n){
+        if (e != null) {
+            if (n == e.getObjA().getId()) {
+                return e;
+            } else if (n  > e.getObjA().getId()) {
+                return pesquisar(e.getDireita(), n);
+            } else {
+                return pesquisar(e.getEsquerda(), n);
+            }
+        }else{
+            return null;
+        }
+
+
+
+
+    }
+
+    public void reprovado(Elemento e, int n){
+        Elemento aluno = pesquisar(e, n);
+
+        if(aluno != null){
+            int faltas = aluno.getObjA().getFaltas();
+            double limiteFaltas = 0.25 * 72;
+
+            if (faltas > limiteFaltas) {
+                System.out.println("Total de faltas: " + faltas + ", Reprovado!");
+            } else {
+                System.out.println("Total de faltas: " + faltas + ", Aprovado!");
+            }
+        }
+        else{System.out.println("Aluno não cadastrado!");}
+
+
+
     }
 
 }
