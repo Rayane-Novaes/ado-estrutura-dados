@@ -22,6 +22,7 @@ public class Main {
 		System.out.println("Digite o id do aluno que deseja ver seus dados: ");
 		int id = scanner.nextInt();
 		Elemento aluno = objAluno.pesquisar(objAluno.getRaiz(), id);
+
 		if(aluno != null){
 			System.out.println(aluno.getObjA().toString());
 		}
@@ -38,8 +39,8 @@ public class Main {
 		System.out.println("A MAIOR MÉDIA FOI: " + objAluno.maiorMedia(objAluno.getRaiz()));
 		System.out.println("--------------------------------------------------------------");
 
-//		int x = objAluno.contar();
-//		System.out.println("existem " + x + "alunos na  rvore");
+		int x = objAluno.contar();
+		System.out.println("existem " + x + " alunos na  rvore");
 	}
 
 }
