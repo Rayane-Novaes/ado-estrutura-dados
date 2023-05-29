@@ -113,10 +113,6 @@ public class ArvoreAluno {
         relatorioAlunosRecursivo(raiz);
     }
 
-    /**
-     * Método auxiliar para percorrer a árvore recursivamente e imprimir as informações dos alunos.
-     * @param elemento O elemento raiz ou subárvore a ser percorrida.
-     */
     private void relatorioAlunosRecursivo(Elemento elemento) {
         if (elemento != null) {
             Aluno aluno = elemento.getObjA();
@@ -139,8 +135,6 @@ public class ArvoreAluno {
         }
 
 
-
-
     }
 
     public void reprovado(Elemento e, int n){
@@ -158,8 +152,21 @@ public class ArvoreAluno {
         }
         else{System.out.println("Aluno não cadastrado!");}
 
+    }
 
+    //Relatório Geral dos alunos por ordem do ID
 
+    public void relatorioOrdenadoPorID() {
+        System.out.println("Relatório de Alunos (Ordenado por ID):");
+        percorrerEmOrdem(raiz);
+    }
+
+    private void percorrerEmOrdem(Elemento elemento) {
+        if (elemento != null) {
+            percorrerEmOrdem(elemento.getEsquerda());
+            System.out.println(elemento.getObjA());
+            percorrerEmOrdem(elemento.getDireita());
+        }
     }
 
 }
