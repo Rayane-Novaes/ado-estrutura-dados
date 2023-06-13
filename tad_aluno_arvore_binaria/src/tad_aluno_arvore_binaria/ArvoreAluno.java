@@ -21,7 +21,6 @@ public class ArvoreAluno {
         }
     }
 
-
     public void inserir(Elemento atual, Elemento elemento) {
         if (atual.getObjA().getId() >= elemento.getObjA().getId()) {
             if (elemento.getDireita() == null) {
@@ -64,26 +63,26 @@ public class ArvoreAluno {
 
         //Maior média
 
-        public double maiorMedia(Elemento e) {
-            double maiorMedia = e.getObjA().getMedia();
-    
-            if (e.getEsquerda() != null) {
-                double mediaEsquerda = maiorMedia(e.getEsquerda());
-                if (mediaEsquerda > maiorMedia) {
-                    maiorMedia = mediaEsquerda;
-                }
+    public double maiorMedia(Elemento e) {
+        double maiorMedia = e.getObjA().getMedia();
+
+        if (e.getEsquerda() != null) {
+            double mediaEsquerda = maiorMedia(e.getEsquerda());
+            if (mediaEsquerda > maiorMedia) {
+                maiorMedia = mediaEsquerda;
             }
-    
-            if (e.getDireita() != null) {
-                double mediaDireita = maiorMedia(e.getDireita());
-                if (mediaDireita > maiorMedia) {
-                    maiorMedia = mediaDireita;
-                }
-            }
-    
-            return maiorMedia;
         }
-        
+
+        if (e.getDireita() != null) {
+            double mediaDireita = maiorMedia(e.getDireita());
+            if (mediaDireita > maiorMedia) {
+                maiorMedia = mediaDireita;
+            }
+        }
+
+        return maiorMedia;
+    }
+
     public void preOrdem(Elemento p) {
         if (p != null) {
             System.out.println(p.getObjA());
@@ -95,8 +94,6 @@ public class ArvoreAluno {
     public int contar(){
        return cont;
     }
-
-
 
     public void relatorioAlunos() {
         System.out.println("Relatório de Alunos:");
@@ -128,10 +125,6 @@ public class ArvoreAluno {
         }else{
             return null;
         }
-
-
-
-
     }
 
     public void reprovado(Elemento e, int n){

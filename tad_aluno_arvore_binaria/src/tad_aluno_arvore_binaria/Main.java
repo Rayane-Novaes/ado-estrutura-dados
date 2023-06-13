@@ -40,7 +40,7 @@ public class Main {
 		System.out.println("--------------------------------------------------------------");
 
 		int x = objAluno.contar();
-		System.out.println("existem " + x + " alunos na  rvore");
+		System.out.println("existem " + x + " alunos na  arvore");
 	}
 
 }
